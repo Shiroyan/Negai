@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no">
+    <title>登錄界面</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/jquery-sakura.min.js"></script>
+    <link rel="stylesheet" href="./css/jquery-sakura.min.css" type="text/css">
+    <style type="text/css">
+        body {
+            overflow-x: hidden;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+        p,a{
+          font-family: "微软雅黑";
+        }
+        .sakura-bg {
+            position: relative;
+            top:0px;
+            background: transparent url("./image/sakura-bg.png") no-repeat fixed;
+            background-size: auto 50%;
+            width: 100%;
+            height: 300px;
+            z-index: 0;
+            filter: opacity(.5);
+        }
+
+        .sakura-blossm {
+            position: fixed;
+            z-index: -1;
+            width: 100%;
+            height: 1000px;
+        }
+        .info-container{
+           margin-top: 20px;
+        }
+        .login{
+            display: block;
+            padding: 0px 30%;
+            padding-top: 10px;
+            box-shadow: 2px 2px 5px #aaa;
+            margin-bottom: 10px;
+        }
+        .after-login{
+            display: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .item{
+            text-align: center;
+            border-bottom: 1px outset #eee;
+        }
+        .item a{
+            color: rgba(255,183,197,1);
+        }
+        .line{
+            padding: 5px auto;
+            margin: 10px auto;
+        }
+        .time{
+            border-radius: 3px;
+            margin-top: 20px;
+            /*background-color: #eee;*/
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        if(typeof(Storage)!="undefined"){
+            var isLogin = localStorage.getItem('isLogin');
+            if(isLogin){
+                $('.login').hide();
+                $('.after-login').show();
+                $(".login-container").append('<img src="./image/user.png" class="img-responsive img-circle center-block" alt="user-pic" style="height: 64px;width: 64px">' +
+                    '<p class="text-center">Shiroyan</p>');
+            }
+            else {
+                $('.login').one("click",function () {
+//            登陆成功后~
+//            $('.time').hide(200);
+                    $('.after-login').slideDown(200);
+                    $(this).hide();
+                    $(".login-container").append('<img src="./image/user.png" class="img-responsive img-circle center-block" alt="user-pic" style="height: 64px;width: 64px">' +
+                        '<p class="text-center">Shiroyan</p>');
+
+                    localStorage.setItem('isLogin',true);
+                });
+            }
+        }
+        else {
+            console.log("Not support storage");
+        }
+
+        $('.sakura-blossm').sakura('start', {
+            fallSpeed: 2,
+            maxSize: 10.5,
+            minSize: 7
+        });
+
+    });
+</script>
+<div class="sakura-blossm"></div>
+<div class="sakura-bg"></div>
+<div class="container-fluid info-container">
+    <div class="login-container">
+        <button type="button" class="btn btn-default center-block login">
+            <p class="block-center">登陆</p>
+        </button>
+    </div>
+    <div class="after-login container">
+        <div class="col-xs-12 line" >
+            <div class="col-xs-6 item">
+                <a href="#">许愿</a>
+            </div>
+            <div class="col-xs-6 item">
+                <a href="#">许愿规则</a>
+            </div>
+        </div>
+        <div class="col-xs-12 line">
+            <div class="col-xs-6 item">
+                <a href="./index.html">男生可领愿望</a>
+            </div>
+            <div class="col-xs-6 item">
+                <a href="./index.html">女生可领愿望</a>
+            </div>
+        </div>
+        <div class="col-xs-12 line">
+            <div class="col-xs-6 item">
+                <a href="#">我的愿望</a>
+            </div>
+            <div class="col-xs-6 item">
+                <a href="#">Ta的愿望</a>
+            </div>
+        </div>
+    </div>
+    <div class="time">
+        <p><strong>活动时间：</strong>3月16日-3月19日</p>
+        <p><strong>愿望开抢：</strong>3月17日（周五）晚上8点</p>
+        <p>深大淘课 & 深大荔知 出品</p>
+        <p>若有疑问，请加知知微信（meetszu）</p>
+    </div>
+
+
+</div>
+</body>
+</html>

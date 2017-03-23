@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no">
+    <title>願い</title>
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+    <style type="text/css">
+        p,a{
+            font-family: 微软雅黑;
+        }
+        .wishes{
+            border: 1px outset transparent;
+            box-shadow: 5px 5px 8px #aaa;
+            position: relative;
+            z-index: 50;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin: 5% auto;
+        }
+        .wishes-grils{
+            background:-webkit-linear-gradient(120deg,rgba(255,183,197,.9),rgba(255,197,208,.6));
+            background:linear-gradient(120deg,rgba(255,183,197,.9),rgba(255,197,208,.6))
+        }
+        .wishes-boys{
+            background:-webkit-linear-gradient(120deg,rgba(215,234,255,.9),rgba(215,220,240,.5));
+            background:linear-gradient(120deg,rgba(215,234,255,.9),rgba(215,220,240,.5));
+        }
+        .cover{
+            display: none;
+            position: absolute;
+            background-color: rgba(230,230,230,.8);
+            z-index: 100;
+            width: 100%;
+            height: inherit;
+        }
+        .group{
+            position: relative;
+            height: inherit;
+            width: inherit;
+        }
+        .ok,.cancel,.favourite{
+            text-align: center;
+        }
+        .btn-ok,.btn-cancel,.btn-fav{
+            font-size: 25px;
+            color: white;
+        }
+
+        .wishes-header{
+            border-bottom: 1px solid rgba(255,255,255,1);
+            padding-left: 10px;
+        }
+        p{
+            margin: 0;
+        }
+        .wishes-content{
+            padding: 5px 15px;
+        }
+        .wishes-content p{
+            word-wrap: break-word;
+        }
+
+    </style>
+</head>
+<body>
+<div class="main-container container">
+    <div class="wishes wishes-grils">
+        <div class="cover">
+            <div class="col-xs-4 ok">
+                <a class="btn btn-ok"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
+            </div>
+
+            <div class="col-xs-4 cancel">
+                <a class="btn btn-cancel"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+            </div>
+
+            <div class="col-xs-4 favourite">
+                <a class="btn btn-fav"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+            </div>
+        </div>
+
+        <div class="wishes-header">
+            <p>计软</p>
+        </div>
+        <div class="wishes-content">
+            <p>
+                なんでもないや
+            </p>
+        </div>
+    </div>
+
+    <div class="wishes wishes-boys">
+        <div class="cover">
+            <div class="col-xs-4 ok">
+                <a class="btn btn-ok"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
+            </div>
+
+            <div class="col-xs-4 cancel">
+                <a class="btn btn-cancel"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+            </div>
+
+            <div class="col-xs-4 favourite">
+                <a class="btn btn-fav"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+            </div>
+        </div>
+
+
+        <div class="wishes-header">
+            <div class="college">
+                <p class="text-left">计软</p>
+            </div>
+        </div>
+        <div class="wishes-content">
+            <p>
+                なんでもないや
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
